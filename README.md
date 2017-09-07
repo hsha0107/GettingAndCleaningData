@@ -62,3 +62,4 @@ Requirements of a tidy data set is
   
 This data set is a tidy data set because it fulfill these requirements. Each column in the data set represent only 1 variable, which can be the subject ID or activity performed or 1 of the 66 measurement variables. Each row is for 1 observation. The data set has a total of 180 observations and each observation is corresponding with each activity-subject pair among 30 subjects and 6 activities. The data set has only 1 kind of observational unit which is the subject performed the experiment. 
 
+![alt text](https://github.com/hsha0107/GettingAndCleaningData/blob/master/sample_image.png)
