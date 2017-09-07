@@ -4,6 +4,7 @@ Peer-graded Assignment: Getting and Cleaning Data Course Project
 * [Problem Summary](#summary)
 * [Repository Contents](#contents)
 * [R Script Process](#process)
+* [Tidy Data Set](#dataset)
 
 <h1 id=summary>Problem Summary </h1>
 
@@ -39,7 +40,18 @@ Thirdly, read data from "activity_labels.txt" and store it in a vector. The vect
 
 Another column indicate the subject performs the activity should also be included in the data set. To do that, read and combine data from "subject_test.txt" and "subject_train.txt". Then use <code>cbind()</code> to combine the subject ID, activity name with the current data set. (step 3)
 
-The descriptive variable names are stored in the vector var_name. Some modifications are made with <code>sub()</code> and <code>gsub()</code> to make it more descriptive and follow with standard rule for variable names: remove *'()'*, replace *'-'* with *'.'*, replace initial *'t'* letter with *'time'*, and replace initial *'f'* letter with *'freq'*. Then, change the names of the variables <code>names(data_set)[3:length(names(data_set))] <- colname</code>. (step 4)
+The descriptive variable names are stored in the vector var_name. Some modifications are made with <code>sub()</code> and <code>gsub()</code> to make it more descriptive and follow with standard rule for variable names: remove *'()'*, replace *'-'* with *'.'*, replace initial *'t'* letter with *'time'*, and replace initial *'f'* letter with *'freq'*. Then, change the column names of the data set with new created variable names (colname) <code>names(data_set)[3:length(names(data_set))] <- colname</code>. (step 4)
+
+In last step, load the <code>library(dplyr)</code> and apply <code>group_by</code> function. The code below will creat a new independent tidy data set with the average of each variable for each activity and each subject in current data set. (step 5)
+
+<code>new_data <- data_set %>% tbl_df() %>%
+     group_by(subjectID, activity) %>%
+     summarise_all(mean)
+     new_data <- data.frame(new_data)</code>
+     
+ Finally, write new data set into a txt file created with <code>write.table()</code> and <code>row.name=FALSE<code>
+ 
+<h1 id=dataset>Tidy Data Set </h1> 
 
 
 
