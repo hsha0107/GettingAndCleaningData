@@ -1,4 +1,4 @@
-# GettingAndCleaningData
+# Getting And Cleaning Data
 Peer-graded Assignment: Getting and Cleaning Data Course Project
 
 * [Problem Summary](#summary)
@@ -46,15 +46,19 @@ In last step, load the <code>library(dplyr)</code> and apply <code>group_by</cod
 
 <code>new_data <- data_set %>% tbl_df() %>%
      group_by(subjectID, activity) %>%
-     summarise_all(mean)
-     new_data <- data.frame(new_data)</code>
+     summarise_all(mean)</code>
      
- Finally, write new data set into a txt file created with <code>write.table()</code> and <code>row.name=FALSE<code>
+ Finally, write new data set into a txt file created with <code>write.table()</code> and <code>row.name=FALSE</code>
  
 <h1 id=dataset>Tidy Data Set </h1> 
 
+The new data set created from the *run_analysis.R* script contains average values of mean or standard deviation measurement variable for each activity and subject pair. There are 30 subjects and 6 activities, so in total, there will be 180 observations for each variable. This data set also contains 68 columns including a column for subject, a column for activity and 66 other columns for the measurement variables. 
 
+Requirements of a tidy data set is 
 
-
-
+  1. Each variable forms a column
+  2. Each observation forms a row
+  3. Each table stores data about one kind of observations
+  
+This data set is a tidy data set because it fulfill these requirements. Each column in the data set represent only 1 variable, which can be the subject ID or activity performed or 1 of the 66 measurement variables. Each row is for 1 observation. The data set has a total of 180 observations and each observation is corresponding with each activity-subject pair among 30 subjects and 6 activities. The data set has only 1 kind of observational unit which is the subject performed the experiment. 
 
