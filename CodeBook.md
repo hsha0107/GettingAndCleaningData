@@ -10,8 +10,8 @@ For each kind of signals, *mean* variable and *standard deviation* variable were
 
 The list of variables are shown below with '.XYZ' is used to denote 3-axial signals in the X, Y and Z directions:
 
-**timeBodyAcc.mean.XYZ__
-timeBodyAcc.std.XYZ__
+**timeBodyAcc.mean.XYZ  
+timeBodyAcc.std.XYZ  
 timeGravityAcc.mean.XYZ__
 timeGravityAcc.std.XYZ__
 timeBodyAccJerk.mean.XYZ__
